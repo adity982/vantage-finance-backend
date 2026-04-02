@@ -1,0 +1,45 @@
+﻿node.exe : warn The 
+configuration property 
+`package.json#prisma` is 
+deprecated and will be 
+removed in Prisma 7. 
+Please migrate to a 
+Prisma config file (e.g., 
+`prisma.config.ts`).
+At C:\Program 
+Files\nodejs\npx.ps1:29 
+char:3
++   & $NODE_EXE 
+$NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (w  
+  arn The config...ma.c   
+ onfig.ts`).:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+For more information, 
+see: https://pris.ly/prism
+a-config
+
+Environment variables 
+loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": PostgreSQL database "vantage_finance", schema "public" at "localhost:5432"
+
+Error: P1000: 
+Authentication failed 
+against database server, 
+the provided database 
+credentials for 
+`postgres` are not valid.
+
+Please make sure to 
+provide valid database 
+credentials for the 
+database server at the 
+configured address.

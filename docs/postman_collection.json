@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "8a7b748f-4001-48b6-baca-dd86c0343142",
+		"name": "Vantage Finance API – Core Backend",
+		"description": "StartFragment\n\nThis collection provides a suite of RESTful endpoints for a role-based financial management system. It implements a robust **Role-Based Access Control (RBAC)** architecture using JWT authentication to distinguish between Admin, Analyst, and Viewer capabilities.\n\n**Key Features:**\n\n- **Secure Authentication:** JWT-based login with password hashing.\n    \n- **User Management:** Admin-only routes for scaling the organization.\n    \n- **Financial Ledger:** CRUD operations for income and expenses with strict validation via Zod.\n    \n- **Dashboard Analytics:** Aggregated insights including net balance and category breakdowns.\n    \n\n**Technical Stack:** Node.js, TypeScript, Express, Prisma ORM, PostgreSQL.\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37350753"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@vantage.com\",\r\n  \"password\": \"Admin123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NGQ1NzJlOS0wNmM5LTRmMTgtYjkxYi00NjNlN2NkMWVlOTciLCJlbWFpbCI6ImFkbWluQHZhbnRhZ2UuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1MTI3MDA2LCJleHAiOjE3NzUyMTM0MDZ9.ufkbrtDnoALpPOnUw8KMeJBHa2dCfapAucJBDsqxYDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"analyst@vantage.com\",\r\n  \"password\": \"SecurePassword123!\",\r\n  \"name\": \"Alex Analyst\",\r\n  \"role\": \"ANALYST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NGQ1NzJlOS0wNmM5LTRmMTgtYjkxYi00NjNlN2NkMWVlOTciLCJlbWFpbCI6ImFkbWluQHZhbnRhZ2UuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1MTI3MDA2LCJleHAiOjE3NzUyMTM0MDZ9.ufkbrtDnoALpPOnUw8KMeJBHa2dCfapAucJBDsqxYDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 10000,\r\n  \"type\": \"INCOME\",\r\n  \"category\": \"Client Project\",\r\n  \"date\": \"2026-04-02T09:00:00.000Z\",\r\n  \"notes\": \"Payment for Q1 deliverables\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NGQ1NzJlOS0wNmM5LTRmMTgtYjkxYi00NjNlN2NkMWVlOTciLCJlbWFpbCI6ImFkbWluQHZhbnRhZ2UuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1MTI3MDA2LCJleHAiOjE3NzUyMTM0MDZ9.ufkbrtDnoALpPOnUw8KMeJBHa2dCfapAucJBDsqxYDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": 2500,\r\n  \"type\": \"EXPENSE\",\r\n  \"category\": \"Software\",\r\n  \"date\": \"2026-04-02T14:30:00.000Z\",\r\n  \"notes\": \"Annual cloud hosting subscription\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NGQ1NzJlOS0wNmM5LTRmMTgtYjkxYi00NjNlN2NkMWVlOTciLCJlbWFpbCI6ImFkbWluQHZhbnRhZ2UuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1MTI3MDA2LCJleHAiOjE3NzUyMTM0MDZ9.ufkbrtDnoALpPOnUw8KMeJBHa2dCfapAucJBDsqxYDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NGQ1NzJlOS0wNmM5LTRmMTgtYjkxYi00NjNlN2NkMWVlOTciLCJlbWFpbCI6ImFkbWluQHZhbnRhZ2UuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1MTI3MDA2LCJleHAiOjE3NzUyMTM0MDZ9.ufkbrtDnoALpPOnUw8KMeJBHa2dCfapAucJBDsqxYDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/dashboard/summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"dashboard",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4NGQ1NzJlOS0wNmM5LTRmMTgtYjkxYi00NjNlN2NkMWVlOTciLCJlbWFpbCI6ImFkbWluQHZhbnRhZ2UuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzc1MTI3MDA2LCJleHAiOjE3NzUyMTM0MDZ9.ufkbrtDnoALpPOnUw8KMeJBHa2dCfapAucJBDsqxYDk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/dashboard/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"dashboard",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
