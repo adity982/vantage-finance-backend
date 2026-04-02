@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "New Request",
+			"name": "1. Auth - Login (Admin)",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,7 +38,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "2. Users - Create Analyst",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -77,7 +77,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "3. Records - Add Income",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -116,7 +116,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "4. Records - Add Expense",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -155,7 +155,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "5. Records - Get All",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -185,7 +185,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "6. Dashboard - Summary",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -228,7 +228,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "7. Dashboard - Categories",
 			"request": {
 				"auth": {
 					"type": "bearer",
